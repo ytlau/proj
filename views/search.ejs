@@ -1,0 +1,50 @@
+<html>
+	<head>
+	<title>Search</title>
+	<style>
+		h1 {
+			background-color: #004d00;
+			color: white;
+			font-family:  aller;
+			}
+
+		body {
+			font-family:  courier;
+			font-size: 17;
+			margin: 0px;
+		}
+		a 	{
+  			text-decoration: none;
+  			background-color: #004d00;
+  			color: white;
+  			padding: 3px 7px 3px 7px;
+  			border-top: 2px solid #CCCCCC;
+  			border-right: 2px solid #333333;
+  			border-bottom: 2px solid #333333;
+  			border-left: 2px solid #CCCCCC;
+			}
+		.button{
+			background-color: #004d00;
+			color: white;
+			font-size: 17;
+		}
+	</style>
+	</head>
+	<body>
+    	<form action="/search" method="post" enctype="multipart/form-data">
+    		<h1>Search By: </h1>
+    		<p align="right" >user: <%=session%>
+			<a href=/logout>Logout</a>  </p>   
+    		<select name="searchBy">
+        	<option value="name">name</option>
+        	<option value="borough">borough</option>
+        	<option value="cuisine">cuisine</option>
+        	<option value="building">building</option>
+        	<option value="street">street</option>
+        	<option value="zipcode">zipcode</option>
+    		</select>
+    		<input type="text" name="field"><br><br>
+    		<input type="submit" class="button" value="Search">
+		</form>
+	</body>
+</html>

@@ -1,0 +1,18 @@
+{
+  "name": "server",
+  "description": "NodeJS Session",
+  "author": "Ting <g11926268@study.ouhk.edu.hk>",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-session": "*",
+    "ejs": "*",
+    "express": "^4.16.4",
+    "formidable": "*",
+    "mongodb": "2.2.36"
+  },
+  "engine": "node >= 0.10.0",
+  "scripts": {
+    "start": "node server.js"
+  }
+}

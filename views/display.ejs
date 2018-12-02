@@ -1,0 +1,79 @@
+<html>
+	<head>
+	<title>Restaurant Information</title>
+	<style>
+		h1 {
+			background-color: #004d00;
+			color: white;
+			font-family:  aller;
+			}
+		.greenText{
+			color: #004d00;
+			}
+
+		body {
+			font-family:  courier;
+			font-size: 17;
+			margin: 0px;
+		}
+		
+		
+		a 	{
+  			text-decoration: none;
+  			background-color: #004d00;
+  			color: white;
+  			padding: 3px 7px 3px 7px;
+  			border-top: 2px solid #CCCCCC;
+  			border-right: 2px solid #333333;
+  			border-bottom: 2px solid #333333;
+  			border-left: 2px solid #CCCCCC;
+			}
+	</style>
+	</head>
+	<body>
+		<h1 >Restaurant <%=result.name%> Information </h1>
+		<p align="right" >user: <%=session%>
+		<a href=/logout>Logout</a>  </p>                 
+		
+		
+		<%if(result.photo!= null && result.photo!= ""){%>
+		Photo: <br>
+        <img src="data:<%= result.mimetype%>;base64, <%=result.photo%>"width="200" >
+        <br>
+        <%}%>
+
+		
+
+		<span class="greenText">Restaurant ID: </span> <%=result._id%><br>
+		<span class="greenText">Borough: </span> <%=result.borough%><br>
+		<span class="greenText">Cuisine: </span> <%=result.cuisine%><br>
+		<span class="greenText">Street: </span> <%=result.address.street%><br>
+		<span class="greenText">Building: </span> <%=result.address.building%><br>
+		<span class="greenText">Zipcode: </span><%=result.address.zipcode%><br>
+		
+
+		<%if(result.grades.length>0){%>
+		<span class="greenText">Rate: </span>
+      	<ol>
+      	<% result.grades.forEach(function(rate) { %>
+        <li>User: <%= rate.user %>  Rate: <%= rate.score %></li>
+        <% });%>	
+		</ol>
+		<%}%>
+	
+
+		<span class="greenText">Created By: </span><%=result.owner%> <br><br>
+		
+        <%if(result.address.coord[0]!="" && result.address.coord[1]!=""){%>
+            <a href="/gmap?lat=<%=result.address.coord[0]%>&lon=<%=result.address.coord[1]%>">Google map</a>
+        <%}%>
+        <a href=/update?id=<%= result._id %>>Edit</a> 
+        <a href=/rate?id=<%= result._id %>>Rate</a>
+
+        <%if(result.owner == session){%>
+        <a href=/delete?id=<%= result._id %>>Delete</a>
+        <%}%>
+        <a href=/list %>>Back to All Restaurant</a>
+		
+	</body>
+</html>

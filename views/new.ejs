@@ -1,0 +1,51 @@
+<html>
+	<head>
+	<title>Create New Restaurant</title>
+	<style>
+		h1 {
+			background-color: #004d00;
+			color: white;
+			font-family:  aller;
+			}
+		body {
+			font-family:  courier;
+			font-size: 17;
+			color: #004d00;
+			margin: 0px;
+		}
+		.button{
+			background-color: #004d00;
+			color: white;
+			font-size: 17;
+		}
+		a 	{
+  			text-decoration: none;
+  			background-color: #004d00;
+  			color: white;
+  			padding: 3px 7px 3px 7px;
+  			border-top: 2px solid #CCCCCC;
+  			border-right: 2px solid #333333;
+  			border-bottom: 2px solid #333333;
+  			border-left: 2px solid #CCCCCC;
+			}
+	</style>
+	</head>
+<body>
+
+	<form action="/new" method="post" enctype="multipart/form-data">
+		<h1>Create New Restaurant</h1>
+		<p align="right" >user: <%=session%>
+		<a href=/logout>Logout</a>  </p>   
+    	Name: <input type="text" name="name"><p style="color:#FF0000;">*This field must not be empty.</p><br>
+		Borough: <input type="text" name="borough"><br>
+		Cuisine: <input type="text" name="cuisine"><br>
+		Street: <input type="text" name="street"><br>
+		Building: <input type="text" name="building"><br>
+		Zipcode: <input type="text" name=zipcode><br>
+		GPS Coordinates (lon.): <input type="number" min="0.0000001" step="0.0000001" name="lon"><br>
+		GPS Coordinates (lat.): <input type="number" min="0.0000001" step="0.0000001" name="lat"><br>
+		Photo: <input type="file" name="filetoupload"><br><br>
+	<input type="submit" class="button" value="Create">
+	</form>
+</body>
+</html>

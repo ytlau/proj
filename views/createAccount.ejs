@@ -1,0 +1,35 @@
+<html>
+	<head>
+	<title>SignUp</title>
+	<style>
+		h1 {
+			background-color: #004d00;
+			color: white;
+			font-family:  aller;
+			}
+		.button{
+			background-color: #004d00;
+			color: white;
+  			font: courier;
+  			font-size: 17;	
+		}
+		body {
+			font-family:  courier;
+			font-size: 17;
+			margin: 0px;
+		}
+		.greenText{
+			color: #004d00;
+			}
+	</style>
+	</head>
+<body>
+	<form action="/createAccount" method="post">
+		<h1>Sign Up</h1>
+		<span class="greenText">Username: </span><input type="text" name="name"><br>
+    	<span class="greenText">Password: </span><input type="password" name="password"><br>
+    	<span class="greenText">Confirm Password: </span><input type="password" name="confirmPassword"><br><br>
+		<input type="submit" class="button" value="Create Account">
+	</form>
+</body>
+</html>

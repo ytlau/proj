@@ -1,0 +1,49 @@
+<html>
+	<head>
+	<title>Login</title>
+	<style>
+		h1 {
+			background-color: #004d00;
+			color: white;
+			font-family:  aller;
+			}
+		.button{
+			background-color: #004d00;
+			color: white;
+  			font: courier;
+  			font-size: 17;	
+		}
+		body {
+			font-family:  courier;
+			font-size: 17;
+			margin: 0px;
+		}
+		.greenText{
+			color: #004d00;
+			}
+		a 	{
+			font-size: 13;
+			font: courier;
+  			text-decoration: none;
+  			background-color: #004d00;
+  			color: white;
+  			padding: 3px 7px 3px 7px;
+  			border-top: 2px solid #CCCCCC;
+  			border-right: 2px solid #333333;
+  			border-bottom: 2px solid #333333;
+  			border-left: 2px solid #CCCCCC;
+			}
+	</style>
+	</head>
+<body>
+	<h1>login</h1>
+	<form action="/login" method="post">
+		<p align="right"><a href=/createAccount >Sign Up</a></p> 
+		<span class="greenText">Username: </span><input type="text" name="name">
+		<br>
+		<span class="greenText">Password: </span><input type="password" name="password"><br><br><br>
+		
+	<input type="submit" class="button" value="Login">
+	</form>
+</body>
+</html>

@@ -1,0 +1,53 @@
+<html>
+	<head>
+	<title>Update Restaurant</title>
+	<style>
+		h1 {
+			background-color: #004d00;
+			color: white;
+			font-family:  aller;
+			}
+
+		body {
+			font-family:  courier;
+			font-size: 17;
+			margin: 0px;
+		}
+		.greenText{
+			color: #004d00;
+		}
+		.button{
+			background-color: #004d00;
+			color: white;
+			font-size: 17;
+		}
+		a 	{
+  			text-decoration: none;
+  			background-color: #004d00;
+  			color: white;
+  			padding: 3px 7px 3px 7px;
+  			border-top: 2px solid #CCCCCC;
+  			border-right: 2px solid #333333;
+  			border-bottom: 2px solid #333333;
+  			border-left: 2px solid #CCCCCC;
+			}
+	</style>
+	</head>
+	<body>
+
+		<form action="/update?id=<%=result._id%>" method="post" enctype="multipart/form-data">
+			<h1> Update Restaurant Form:</h1><p align="right" >user: <%=session%> <a href=/logout>logout</a></p> <br>
+    		<span class="greenText">Name: </span><input type="text" name="name" value = "<%=result.name%>"><p style="color:#FF0000;">*This field must not be empty.</p><br>
+
+			<span class="greenText">Borough: </span> <input type="text" name="borough" value = "<%=result.borough%>" > <br>
+			<span class="greenText">Cuisine: </span><input type="text" name="cuisine" value = <%=result.cuisine%>><br>
+			<span class="greenText">Street: </span><input type="text" name="street" value = <%=result.address.street%>><br>
+			<span class="greenText">Building: </span><input type="text" name="building" value = <%=result.address.building%>><br>
+			<span class="greenText">Zipcode: </span><input type="text" name=zipcode value = <%=result.address.zipcode%>><br>
+			<span class="greenText">GPS Coordinates (lon.): </span><input type="number" min="0.0000001" step="0.0000001" name="lon" value = <%=result.address.coord[0]%>><br>
+			<span class="greenText">GPS Coordinates (lat.): </span><input type="number" min="0.0000001" step="0.0000001" name="lat" value = <%=result.address.coord[1]%>><br>
+			<span class="greenText">Photo: </span><input type="file" name="filetoupload"><br><br>
+			<input type="submit" class="button" value="Update">
+		</form>
+	</body>
+</html>

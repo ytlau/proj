@@ -1,0 +1,52 @@
+<html>
+	<head>
+	<title>Restaurants List</title>
+	<style>
+		h1 {
+			background-color: #004d00;
+			color: white;
+			font-family:  aller;
+			}
+
+		body {
+			font-family:  courier;
+			font-size: 17;
+			color: #004d00;
+			margin: 0px;
+		}
+		
+		a 	{
+			color: #004d00;
+			text-decoration: none;
+		}
+		.button 	{
+  			text-decoration: none;
+  			background-color: #004d00;
+  			color: white;
+  			padding: 3px 7px 3px 7px;
+  			border-top: 2px solid #CCCCCC;
+  			border-right: 2px solid #333333;
+  			border-bottom: 2px solid #333333;
+  			border-left: 2px solid #CCCCCC;
+			}
+
+	</style>
+	</head>
+	<body>
+		<H1>Restaurants List</H1>
+		<p align="right" >user: <%=session%> <a href=/logout class="button">Logout</a> </p> 
+		
+
+        <ol>
+            <% result.forEach(function(restaurant) { %>
+        <li><a href=/display?id=<%= restaurant._id %>><%= restaurant.name %></a></li>
+        <% });%>
+		</ol>		
+		<br>
+
+		<a href=/new class="button"> Create new restaurant</a>
+		<a href=/search class="button"> Search</a>
+
+
+	</body>
+</html>
